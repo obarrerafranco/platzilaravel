@@ -11,13 +11,16 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
+
+        factory(PlatziPHP\User::class, 10)->create();
+
+        /*DB::table('users')->insert([
 
             'name' => 'Orangel',
 
             'email' => 'obarrera@crearemos.com',
 
                 'password' => '1234'
-        ]);
+        ]);*/
     }
 }
