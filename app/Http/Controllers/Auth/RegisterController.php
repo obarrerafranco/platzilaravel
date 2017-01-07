@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace PlatziPHP\Http\Controllers\Auth;
 
-use App\User;
+use PlatziPHP\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use PlatziPHP\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
