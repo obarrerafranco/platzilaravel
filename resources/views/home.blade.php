@@ -4,12 +4,19 @@
 
 <h1>Estos son nuestros post</h1>
 
-    <ul>
+    <ul class="list-unstyled">
     @foreach($posts as $post)
 
         <li>
-            <a href="/post/{{ $post->id }}">{{$post->title}}</a>
-           - {{$post->author->name}}
+            <p class="lead">
+
+                <a href="/post/{{ $post->id }}">{{$post->title}}</a>
+            </p>
+
+           autor: {{$post->author->name}}
+            <br />
+           publicado: {{$post->created_at}}
+            <br />
 
         </li>
     @endforeach
