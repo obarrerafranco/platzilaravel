@@ -18,9 +18,11 @@ class CreatePostsTable extends Migration
 
             $table->increments('id');
 
-            $table->string('name');
+            $table->string('title');
 
-            $table->integer('autor_id');
+            $table->string('body');
+
+            $table->integer('author_id');
 
             $table->timestamps();
         });
@@ -33,6 +35,6 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIsExist('posts');
+        Schema::drop('posts');
     }
 }
