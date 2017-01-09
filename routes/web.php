@@ -13,3 +13,5 @@
 
 
 Route::get('/', 'Homecontroller@index');
+
+Route::get('post/{id}', 'Postcontroller@show');

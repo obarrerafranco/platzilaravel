@@ -4,6 +4,8 @@ namespace PlatziPHP\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use PlatziPHP\Post;
+
 class HomeController extends Controller
 {
     /**
@@ -13,7 +15,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        /*$name = 'Oran';
+        return view('home', ['name' => $name]);*/
+
+        $posts = Post::with('author')->get();
+
+
+        return view('home', ['posts' => $posts]);
     }
 
     /**

@@ -2,6 +2,10 @@
 
 use Illuminate\Database\Seeder;
 
+use PlatziPHP\User;
+
+use PlatziPHP\Post;
+
 class UsersTableSeeder extends Seeder
 {
     /**
@@ -12,7 +16,19 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
 
-        factory(PlatziPHP\User::class, 10)->create();
+        User::truncate();
+        Post::truncate();
+
+        factory(PlatziPHP\User::class, 10)->create()->each(function ($user) {
+            $post = factory(PlatziPHP\Post::class)->make();
+            $user->posts()->save($post);
+        });
+
+
+       // User::truncate();
+
+
+        //factory(PlatziPHP\User::class, 10)->create();
 
         /*DB::table('users')->insert([
 

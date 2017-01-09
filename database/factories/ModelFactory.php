@@ -21,3 +21,9 @@ $factory->define(PlatziPHP\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(PlatziPHP\Post::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->sentence()
+    ];
+});
