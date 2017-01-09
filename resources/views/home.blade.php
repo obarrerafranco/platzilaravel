@@ -8,8 +8,8 @@
     @foreach($posts as $post)
 
         <li>
-            <a href="/post/{{ $post->id }}">{{$post->name}}</a>
-            {{$post->name}} - {{$post->author->name}}
+            <a href="/post/{{ $post->id }}">{{$post->title}}</a>
+           - {{$post->author->name}}
 
         </li>
     @endforeach
