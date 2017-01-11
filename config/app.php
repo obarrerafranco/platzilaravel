@@ -163,6 +163,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+
         /*
          * Package Service Providers...
          */
@@ -177,6 +178,7 @@ return [
         // PlatziPHP\Providers\BroadcastServiceProvider::class,
         PlatziPHP\Providers\EventServiceProvider::class,
         PlatziPHP\Providers\RouteServiceProvider::class,
+        PlatziPHP\Providers\ViewComposerServiceProvider::class,
 
     ],
 

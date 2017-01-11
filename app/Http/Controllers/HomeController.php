@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use PlatziPHP\Post;
 
+use Illuminate\Support\Facades\Auth;
+
 class HomeController extends Controller
 {
     /**
@@ -17,6 +19,8 @@ class HomeController extends Controller
     {
         /*$name = 'Oran';
         return view('home', ['name' => $name]);*/
+
+        //dd(Auth::user());
 
         $posts = Post::with('author')->get();
 

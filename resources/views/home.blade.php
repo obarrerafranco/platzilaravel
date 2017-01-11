@@ -4,6 +4,10 @@
 
 <h1>Estos son nuestros post</h1>
 
+<a class="btn btn-primary" href="{{ route('post_create_path') }}">Crear post</a>
+
+<hr>
+
     <ul class="list-unstyled">
     @foreach($posts as $post)
 

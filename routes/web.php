@@ -14,13 +14,41 @@
 Route::group(['middleware' => 'auth'], function() {
 
 
-    Route::get('/', 'HomeController@index');
+   //Route::get('/', 'HomeController@index');
+    Route::get('/', [
+        'uses' => 'HomeController@index',
+        'as'   => 'home_path',
+    ]);
+
+
+    Route::get('post/create', [
+        'uses' => 'PostController@create',
+        'as'   => 'post_create_path',
+    ]);
+
+    Route::post('post/create', [
+        'uses' => 'PostController@store',
+        'as'   => 'post_store_path',
+    ]);
+    Route::get('post/{id}/edit', [
+        'uses' => 'PostController@edit',
+        'as'   => 'post_edit_path',
+    ])->where('id', '[0-9]+');
+
+    Route::patch('post/{id}/edit', [
+        'uses' => 'PostController@update',
+        'as'   => 'post_patch_path',
+    ])->where('id', '[0-9]+');
+
+    Route::delete('post/{id}/delete', [
+        'uses' => 'PostController@destroy',
+        'as'   => 'post_delete_path',
+    ])->where('id', '[0-9]+');
 
     Route::get('post/{id}', [
         'uses' => 'PostController@show',
         'as'   => 'post_show_path',
-    ]);
-
+    ])->where('id', '[0-9]+');
 });
 
 Route::group(['prefix' => 'api'], function () {
